@@ -18,3 +18,11 @@ class Product(db.Model):
 
     def __repr__(self):
         return f'<Products {self.id}, {self.name}, {self.description}, {self.price}, {self.supplier_id}, {self.date}>'
+class Transaction(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    quantity = db.Column(db.Integer)
+    products_id = db.Column(db.Integer)
+    created_at = db.Column(DateTime, default=datetime.datetime.utcnow)
+
+    def __repr__(self):
+        return f'<Transactions {self.id}, {self.quantity}, {self.products_id}, {self.created_at}>'
