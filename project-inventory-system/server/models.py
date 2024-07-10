@@ -17,5 +17,4 @@ class Product(db.Model):
     date = db.Column(DateTime, default=datetime.datetime.utcnow)
 
     def __repr__(self):
-        return f'<Products {self.id}, {self.name}, {self.description}, {self.price}, {self.supplier_id}>'
-
+        return f'<Products {self.id}, {self.name}, {self.description}, {self.price}, {self.supplier_id}, {self.date}>'
